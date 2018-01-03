@@ -13,20 +13,20 @@ func main() {
 
 	payload := strings.NewReader(`<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.jaxws.journaldev.com"><soapenv:Header/><soapenv:Body><ser:getAllPersons/></soapenv:Body></soapenv:Envelope>`)
 
-	req, _ := http.NewRequest("POST", url, payload)
+	request, _ := http.NewRequest("POST", url, payload)
 
-	req.Header.Add("content-type", "text/xml")
-	req.Header.Add("cache-control", "no-cache")
-	req.Header.Add( "SOAPAction", "");
+	request.Header.Add("content-type", "text/xml")
+	request.Header.Add("cache-control", "no-cache")
+	request.Header.Add( "SOAPAction", "");
 
-	fmt.Println(req)
+	fmt.Println(request)
 
-	res, _ := http.DefaultClient.Do(req)
+	response, _ := http.DefaultClient.Do(request)
+	defer response.Body.Close()
+	
+	body, _ := ioutil.ReadAll(response.Body)
 
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
-
-	fmt.Println(res)
+	fmt.Println(response)
 	fmt.Println(string(body))
 
 }
