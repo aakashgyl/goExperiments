@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	res, _ := http.Get("http://10.71.11.188:8080/view/ANewPage")
+	response, _ := http.Get("http://10.71.11.188:8080/view/ANewPage")
 
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
+	defer response.Body.Close()
+	body, _ := ioutil.ReadAll(response.Body)
 
-	fmt.Println(res)
+	fmt.Println(response)
 	fmt.Println(string(body))
 
 }
