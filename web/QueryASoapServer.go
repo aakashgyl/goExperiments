@@ -10,8 +10,8 @@ import (
 func main() {
 
 	url := "http://localhost:8080/SOAPExample/services/PersonServiceImpl"
-
-	payload := strings.NewReader(`<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.jaxws.journaldev.com"><soapenv:Header/><soapenv:Body><ser:getAllPersons/></soapenv:Body></soapenv:Envelope>`)
+	soapxml := `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.jaxws.journaldev.com"><soapenv:Header/><soapenv:Body><ser:getAllPersons/></soapenv:Body></soapenv:Envelope>`
+	payload := strings.NewReader(soapxml)
 
 	request, _ := http.NewRequest("POST", url, payload)
 
