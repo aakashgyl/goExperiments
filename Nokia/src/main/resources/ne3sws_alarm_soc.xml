@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soc:NE3SWSSOC xmlns:soc="http://www.nokia.com/schemas/ne3s/soc/1.0/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.nsn.com/schemas/ne3s/soc/1.0/NE3SSoC.1.0.xsd"
+	patchLevel="01.001">
+	<Adaptation href="3GPP.common#3GPP" />
+	<soc:common version="1.0">
+		<soc:security type="none" />
+		<soc:ruim supported="true" version="1.0" />
+		<soc:sdnFormat format="3gpp" />
+		<soc:fallback supported="false" />
+		<soc:compression format="tar_gzip" />
+		<soc:uploadTypes>
+			<soc:uploadType type="configuration" supported="false" />
+			<soc:uploadType type="topology" supported="false" />
+			<soc:uploadType type="fault" supported="true" />
+			<soc:uploadType type="audit" supported="false" />
+			<soc:uploadType type="trace" supported="false" />
+			<soc:uploadType type="measurement" supported="false" />
+		</soc:uploadTypes>
+		<soc:dataFormats>
+			<soc:dataFormat type="ofas_3.1" />
+			<soc:dataFormat type="ocos_1.0" />
+			<soc:dataFormat type="omes_2.1" />
+			<soc:dataFormat type="oats_1.0" />
+			<soc:dataFormat type="oobs_1.2" />
+			<soc:dataFormat type="raml_2.1" />
+		</soc:dataFormats>
+
+		<soc:providedOperations>
+			<soc:providedOperation name="startRegistration"
+				supported="true" />
+			<soc:providedOperation name="completeRegistration"
+				supported="true" />
+			<soc:providedOperation name="unregister"
+				supported="true" />
+			<soc:providedOperation name="startSession"
+				supported="true" />
+			<soc:providedOperation name="stopSession"
+				supported="true" />
+			<soc:providedOperation name="keepAliveSession"
+				supported="true" />
+			<soc:providedOperation name="get" supported="true" />
+			<soc:providedOperation name="set" supported="true" />
+			<soc:providedOperation name="download"
+				supported="false" />
+			<soc:providedOperation name="validate"
+				supported="false" />
+			<soc:providedOperation name="activate"
+				supported="false" />
+			<soc:providedOperation name="upload" supported="true" />
+			<soc:providedOperation name="provision"
+				supported="true" />
+			<soc:providedOperation name="interruptOperation"
+				supported="false" />
+			<soc:providedOperation name="requestOperationStatus"
+				supported="false" />
+			<soc:providedOperation name="ping" supported="true" />
+		</soc:providedOperations>
+
+		<soc:usedOperations>
+			<soc:usedOperation name="abortSession" supported="false" />
+			<soc:usedOperation name="reportOperationInterrupt"
+				supported="false" />
+			<soc:usedOperation name="reportOperationStatus"
+				supported="true" />
+			<soc:usedOperation name="reregister" supported="true" />
+			<soc:usedOperation name="transferNotification"
+				supported="true" />
+		</soc:usedOperations>
+	</soc:common>
+	
+	<soc:fragment name="FaultManagement" version="1.0">
+		<soc:notification notificationType="ne3s_fm_alarmEventNotification"
+			queueId="ne3s_fm_alarmEventNotificationQueue" buffered="true"
+			supported="true" />
+	</soc:fragment>
+</soc:NE3SWSSOC>

@@ -1,0 +1,2990 @@
+{
+	"annotations": {
+		"list": [
+			{
+				"builtIn": 1,
+				"datasource": "-- Grafana --",
+				"enable": true,
+				"hide": true,
+				"iconColor": "rgba(0, 211, 255, 1)",
+				"name": "Annotations & Alerts",
+				"type": "dashboard"
+			}
+		]
+	},
+	"editable": true,
+	"gnetId": null,
+	"graphTooltip": 0,
+	"iteration": 1548069802823,
+	"links": [
+		{
+			"asDropdown": true,
+			"icon": "external link",
+			"tags": [
+				"home"
+			],
+			"title": "NDAC Home",
+			"type": "dashboards"
+		},
+		{
+			"asDropdown": true,
+			"icon": "external link",
+			"tags": [
+				"radio"
+			],
+			"title": "Radio",
+			"type": "dashboards"
+		}
+	],
+	"panels": [
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "$dataSource",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 0
+			},
+			"id": 1,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Cell_Avail_M8020C3",
+							"id": "1",
+							"inlineScript": "(doc.LTE_Cell_Avail_M8020C3.value/doc.LTE_Cell_Avail_M8020C6.value)*100",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "(doc.LTE_Cell_Avail_M8020C3.value/doc.LTE_Cell_Avail_M8020C6.value)*100"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn AND -LTE_Cell_Avail_M8020C6:0",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Cell Availability Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 5
+			},
+			"id": 19,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Cell_Avail_M8020C3",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_Cell_Avail_M8020C3.value)/(doc.LTE_Cell_Avail_M8020C6.value - doc.LTE_Cell_Avail_M8020C4.value - doc.LTE_Cell_Avail_M8020C7.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_Cell_Avail_M8020C3.value)/(doc.LTE_Cell_Avail_M8020C6.value - doc.LTE_Cell_Avail_M8020C4.value - doc.LTE_Cell_Avail_M8020C7.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Cell Availability, excluding blocked by user state (BLU)",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 10
+			},
+			"id": 20,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Cell_Load_M8001C6",
+							"id": "1",
+							"inlineScript": "(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value+doc.LTE_Cell_Load_M8001C286.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value+doc.LTE_Cell_Load_M8001C286.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN RACH Setup Attempts",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 15
+			},
+			"id": 21,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Cell_Load_M8001C8",
+							"id": "1",
+							"inlineScript": "100* (doc.LTE_Cell_Load_M8001C8.value)/(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value+doc.LTE_Cell_Load_M8001C286.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100* (doc.LTE_Cell_Load_M8001C8.value)/(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value+doc.LTE_Cell_Load_M8001C286.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN RACH Setup Completion Success Rate",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 20
+			},
+			"id": 22,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_MAC_M8029C32",
+							"id": "1",
+							"inlineScript": "100* (doc.LTE_MAC_M8029C32.value)/(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100* (doc.LTE_MAC_M8029C32.value)/(doc.LTE_Cell_Load_M8001C6.value+doc.LTE_Cell_Load_M8001C7.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Complete Contention Based RACH Setup Success Rate",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 25
+			},
+			"id": 23,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_UE_State_M8013C17",
+							"id": "1",
+							"inlineScript": "(doc.LTE_UE_State_M8013C17.value +doc.LTE_UE_State_M8013C18.value + doc.LTE_UE_State_M8013C19.value + doc.LTE_UE_State_M8013C34.value + doc.LTE_UE_State_M8013C31.value + doc.LTE_UE_State_M8013C21.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "(doc.LTE_UE_State_M8013C17.value +doc.LTE_UE_State_M8013C18.value + doc.LTE_UE_State_M8013C19.value + doc.LTE_UE_State_M8013C34.value + doc.LTE_UE_State_M8013C31.value + doc.LTE_UE_State_M8013C21.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "Total E-UTRAN RRC Connection Setup Attempts",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 30
+			},
+			"id": 24,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_UE_State_M8013C5",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_UE_State_M8013C5.value) / (doc.LTE_UE_State_M8013C17.value +doc.LTE_UE_State_M8013C18.value + doc.LTE_UE_State_M8013C19.value + doc.LTE_UE_State_M8013C34.value + doc.LTE_UE_State_M8013C31.value + doc.LTE_UE_State_M8013C21.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_UE_State_M8013C5.value) / (doc.LTE_UE_State_M8013C17.value +doc.LTE_UE_State_M8013C18.value + doc.LTE_UE_State_M8013C19.value + doc.LTE_UE_State_M8013C34.value + doc.LTE_UE_State_M8013C31.value + doc.LTE_UE_State_M8013C21.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "Total E-UTRAN RRC Connection Setup Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 35
+			},
+			"id": 25,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_UE_State_M8013C13",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_UE_State_M8013C13.value + doc.LTE_UE_State_M8013C10.value+ doc.LTE_UE_State_M8013C9.value +doc.LTE_UE_State_M8013C82.value + doc.LTE_Inter_Sys_HO_M8016C23.value +doc.LTE_Inter_Sys_HO_M8016C30.value + doc.LTE_Inter_Sys_HO_M8016C34.value)/ (doc.LTE_UE_State_M8013C13.value + doc.LTE_UE_State_M8013C12.value + doc.LTE_UE_State_M8013C15.value+ doc.LTE_UE_State_M8013C10.value +doc.LTE_UE_State_M8013C12.value+ doc.LTE_UE_State_M8013C15.value+ doc.LTE_UE_State_M8013C9.value +doc.LTE_UE_State_M8013C28.value + doc.LTE_Inter_Sys_HO_M8016C23.value +doc.LTE_Inter_Sys_HO_M8016C30.value + doc.LTE_Inter_Sys_HO_M8016C34.value + doc.LTE_UE_State_M8013C77.value +doc.LTE_UE_State_M8013C78.value+doc.LTE_UE_State_M8013C79.value + doc.LTE_UE_State_M8013C80.value + doc.LTE_UE_State_M8013C81.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_UE_State_M8013C13.value + doc.LTE_UE_State_M8013C10.value+ doc.LTE_UE_State_M8013C9.value +doc.LTE_UE_State_M8013C82.value + doc.LTE_Inter_Sys_HO_M8016C23.value +doc.LTE_Inter_Sys_HO_M8016C30.value + doc.LTE_Inter_Sys_HO_M8016C34.value)/ (doc.LTE_UE_State_M8013C13.value + doc.LTE_UE_State_M8013C12.value + doc.LTE_UE_State_M8013C15.value+ doc.LTE_UE_State_M8013C10.value +doc.LTE_UE_State_M8013C12.value+ doc.LTE_UE_State_M8013C15.value+ doc.LTE_UE_State_M8013C9.value +doc.LTE_UE_State_M8013C28.value + doc.LTE_Inter_Sys_HO_M8016C23.value +doc.LTE_Inter_Sys_HO_M8016C30.value + doc.LTE_Inter_Sys_HO_M8016C34.value + doc.LTE_UE_State_M8013C77.value +doc.LTE_UE_State_M8013C78.value+doc.LTE_UE_State_M8013C79.value + doc.LTE_UE_State_M8013C80.value + doc.LTE_UE_State_M8013C81.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN UE Transaction to ECM-IDLE State Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 40
+			},
+			"id": 26,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_RRC_M8008C5",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_RRC_M8008C5.value/doc.LTE_RRC_M8008C4.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_RRC_M8008C5.value/doc.LTE_RRC_M8008C4.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "-LTE_RRC_M8008C5:0 AND edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "Total E-UTRAN RRC Connection Re-establishment Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 45
+			},
+			"id": 27,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_RRC_M8008C4",
+							"id": "1",
+							"inlineScript": "doc.LTE_RRC_M8008C4.value",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "doc.LTE_RRC_M8008C4.value"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "RRC Connection Re-establishment Attempts per type total attempts",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 50
+			},
+			"id": 28,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_RRC_M8008C2",
+							"id": "1",
+							"inlineScript": "doc.LTE_RRC_M8008C2.value",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "doc.LTE_RRC_M8008C2.value"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Discarded RRC Paging Records",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 55
+			},
+			"id": 29,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_RRC_M8008C1",
+							"id": "1",
+							"inlineScript": "doc.LTE_RRC_M8008C1.value",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "doc.LTE_RRC_M8008C1.value"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN RRC Paging Records",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 60
+			},
+			"id": 30,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Radio_Bearer_M8007C0",
+							"id": "1",
+							"inlineScript": "doc.LTE_Radio_Bearer_M8007C0.value",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "doc.LTE_Radio_Bearer_M8007C0.value"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Data Radio Bearer Attempts",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 65
+			},
+			"id": 31,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_Radio_Bearer_M8007C1",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_Radio_Bearer_M8007C1.value/ doc.LTE_Radio_Bearer_M8007C0.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_Radio_Bearer_M8007C1.value/ doc.LTE_Radio_Bearer_M8007C0.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "-LTE_Radio_Bearer_M8007C0:0 AND edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Data Radio Bearer Setup Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 70
+			},
+			"id": 32,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C261",
+							"id": "1",
+							"inlineScript": "100 - 100*(doc.LTE_EPS_Bearer_M8006C261.value +doc.LTE_EPS_Bearer_M8006C254.value - doc.LTE_EPS_Bearer_M8006C255.value - doc.LTE_EPS_Bearer_M8006C258.value + doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value] - doc.LTE_EPS_Bearer_M8006C301.value - doc.LTE_EPS_Bearer_M8006C314.value + doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value + doc.LTE_EPS_Bearer_M8006C313.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C263.value + doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value - doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value +doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value + doc.LTE_EPS_Bearer_M8006C313.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100 - 100*(doc.LTE_EPS_Bearer_M8006C261.value +doc.LTE_EPS_Bearer_M8006C254.value - doc.LTE_EPS_Bearer_M8006C255.value - doc.LTE_EPS_Bearer_M8006C258.value + doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value] - doc.LTE_EPS_Bearer_M8006C301.value - doc.LTE_EPS_Bearer_M8006C314.value + doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value + doc.LTE_EPS_Bearer_M8006C313.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C263.value + doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value - doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value +doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value + doc.LTE_EPS_Bearer_M8006C313.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN Radio Bearer Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 75
+			},
+			"id": 33,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C0",
+							"id": "1",
+							"inlineScript": "doc.LTE_EPS_Bearer_M8006C0.value",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "doc.LTE_EPS_Bearer_M8006C0.value"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN E-RAB Setup Attempts",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 80
+			},
+			"id": 34,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C1",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_EPS_Bearer_M8006C1.value / doc.LTE_EPS_Bearer_M8006C0.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_EPS_Bearer_M8006C1.value / doc.LTE_EPS_Bearer_M8006C0.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "-LTE_EPS_Bearer_M8006C0:0 AND edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN E-RAB Setup Success Ratio",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 85
+			},
+			"id": 35,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C255",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_EPS_Bearer_M8006C255.value + doc.LTE_EPS_Bearer_M8006C258.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C314.value)/(doc.LTE_EPS_Bearer_M8006C254.value +doc.LTE_EPS_Bearer_M8006C261.value+ doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value+ doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value- doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value+doc.LTE_EPS_Bearer_M8006C306.value+ doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value +doc.LTE_EPS_Bearer_M8006C313.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_EPS_Bearer_M8006C255.value + doc.LTE_EPS_Bearer_M8006C258.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C314.value)/(doc.LTE_EPS_Bearer_M8006C254.value +doc.LTE_EPS_Bearer_M8006C261.value+ doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value+ doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value- doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value+doc.LTE_EPS_Bearer_M8006C306.value+ doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value +doc.LTE_EPS_Bearer_M8006C313.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN E-RAB Normal Release Ratio User Perspective",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 90
+			},
+			"id": 36,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C255",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_EPS_Bearer_M8006C255.value + doc.LTE_EPS_Bearer_M8006C258.value+ doc.LTE_EPS_Bearer_M8006C260.value + doc.LTE_EPS_Bearer_M8006C6.value+ doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C8.value +doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value + doc.LTE_EPS_Bearer_M8006C10.value + doc.LTE_EPS_Bearer_M8006C12.value +doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C261.value+ doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value+ doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value - doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value+ doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C11.value + doc.LTE_EPS_Bearer_M8006C12.value + doc.LTE_EPS_Bearer_M8006C313.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_EPS_Bearer_M8006C255.value + doc.LTE_EPS_Bearer_M8006C258.value+ doc.LTE_EPS_Bearer_M8006C260.value + doc.LTE_EPS_Bearer_M8006C6.value+ doc.LTE_EPS_Bearer_M8006C7.value + doc.LTE_EPS_Bearer_M8006C8.value +doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value + doc.LTE_EPS_Bearer_M8006C10.value + doc.LTE_EPS_Bearer_M8006C12.value +doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C261.value+ doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value+ doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value + doc.LTE_EPS_Bearer_M8006C277.value - doc.LTE_EPS_Bearer_M8006C301.value + doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value+ doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value + doc.LTE_EPS_Bearer_M8006C11.value + doc.LTE_EPS_Bearer_M8006C12.value + doc.LTE_EPS_Bearer_M8006C313.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN E-RAB Normal Release Ratio RAN View",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		},
+		{
+			"aliasColors": {
+				
+			},
+			"bars": false,
+			"dashLength": 10,
+			"dashes": false,
+			"datasource": "moss-ne3s-pm",
+			"fill": 1,
+			"gridPos": {
+				"h": 5,
+				"w": 24,
+				"x": 0,
+				"y": 95
+			},
+			"id": 37,
+			"interval": "15m",
+			"legend": {
+				"alignAsTable": true,
+				"avg": false,
+				"current": false,
+				"max": false,
+				"min": false,
+				"rightSide": true,
+				"show": true,
+				"total": false,
+				"values": false
+			},
+			"lines": true,
+			"linewidth": 1,
+			"links": [],
+			"nullPointMode": "null",
+			"percentage": false,
+			"pointradius": 5,
+			"points": false,
+			"renderer": "flot",
+			"seriesOverrides": [],
+			"spaceLength": 10,
+			"stack": false,
+			"steppedLine": false,
+			"targets": [
+				{
+					"bucketAggs": [
+						{
+							"fake": true,
+							"field": "nename.keyword",
+							"id": "4",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_term",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"fake": true,
+							"field": "Dn.keyword",
+							"id": "5",
+							"settings": {
+								"min_doc_count": 1,
+								"order": "desc",
+								"orderBy": "_count",
+								"size": "10"
+							},
+							"type": "terms"
+						},
+						{
+							"field": "timestamp",
+							"id": "2",
+							"settings": {
+								"interval": "auto",
+								"min_doc_count": 0,
+								"trimEdges": 0
+							},
+							"type": "date_histogram"
+						}
+					],
+					"dsType": "elasticsearch",
+					"metrics": [
+						{
+							"field": "LTE_EPS_Bearer_M8006C261",
+							"id": "1",
+							"inlineScript": "100*(doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C254.value- doc.LTE_EPS_Bearer_M8006C255.value - doc.LTE_EPS_Bearer_M8006C258.value - doc.LTE_EPS_Bearer_M8006C260.value -doc.LTE_EPS_Bearer_M8006C301.value+ doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C313.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value +doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value- doc.LTE_EPS_Bearer_M8006C301.value+doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value+ doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value+ doc.LTE_EPS_Bearer_M8006C313.value)",
+							"meta": {
+								
+							},
+							"settings": {
+								"script": {
+									"inline": "100*(doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C254.value- doc.LTE_EPS_Bearer_M8006C255.value - doc.LTE_EPS_Bearer_M8006C258.value - doc.LTE_EPS_Bearer_M8006C260.value -doc.LTE_EPS_Bearer_M8006C301.value+ doc.LTE_EPS_Bearer_M8006C309.value+ doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C313.value)/(doc.LTE_EPS_Bearer_M8006C254.value + doc.LTE_EPS_Bearer_M8006C261.value + doc.LTE_EPS_Bearer_M8006C6.value + doc.LTE_EPS_Bearer_M8006C7.value +doc.LTE_EPS_Bearer_M8006C8.value + doc.LTE_EPS_Bearer_M8006C9.value+ doc.LTE_EPS_Bearer_M8006C277.value- doc.LTE_EPS_Bearer_M8006C301.value+doc.LTE_EPS_Bearer_M8006C303.value + doc.LTE_EPS_Bearer_M8006C306.value + doc.LTE_EPS_Bearer_M8006C309.value + doc.LTE_EPS_Bearer_M8006C310.value+ doc.LTE_EPS_Bearer_M8006C311.value + doc.LTE_EPS_Bearer_M8006C312.value+ doc.LTE_EPS_Bearer_M8006C313.value)"
+								}
+							},
+							"type": "avg"
+						}
+					],
+					"query": "edgename:$edgeName AND nename:$ne_aliasName AND ObjectType:$ObjectType AND Dn:$Dn",
+					"refId": "A",
+					"timeField": "timestamp"
+				}
+			],
+			"thresholds": [],
+			"timeFrom": null,
+			"timeShift": null,
+			"title": "E-UTRAN E-RAB Drop Ratio, RAN View",
+			"tooltip": {
+				"shared": true,
+				"sort": 0,
+				"value_type": "individual"
+			},
+			"type": "graph",
+			"xaxis": {
+				"buckets": null,
+				"mode": "time",
+				"name": null,
+				"show": true,
+				"values": []
+			},
+			"yaxes": [
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				},
+				{
+					"format": "short",
+					"label": null,
+					"logBase": 1,
+					"max": null,
+					"min": null,
+					"show": true
+				}
+			],
+			"yaxis": {
+				"align": false,
+				"alignLevel": null
+			}
+		}
+	],
+	"refresh": false,
+	"schemaVersion": 16,
+	"style": "dark",
+	"tags": [
+		"radio"
+	],
+	"templating": {
+		"list": [
+			{
+				"allValue": null,
+				"current": {
+					"text": "All",
+					"value": "$__all"
+				},
+				"datasource": "moss-ne3s-pm",
+				"hide": 0,
+				"includeAll": true,
+				"label": "Edge Instance",
+				"multi": true,
+				"name": "edgeName",
+				"options": [],
+				"query": "{\"find\": \"terms\", \"field\": \"edgename.keyword\"}",
+				"refresh": 2,
+				"regex": "",
+				"sort": 0,
+				"tagValuesQuery": "",
+				"tags": [],
+				"tagsQuery": "",
+				"type": "query",
+				"useTags": false
+			},
+			{
+				"allValue": null,
+				"current": {
+					"text": "All",
+					"value": "$__all"
+				},
+				"datasource": "moss-ne3s-pm",
+				"hide": 0,
+				"includeAll": true,
+				"label": "EnodeB Alias Name",
+				"multi": true,
+				"name": "ne_aliasName",
+				"options": [],
+				"query": "{\"find\": \"terms\", \"field\": \"nename.keyword\", \"query\":\"edgename:$edgeName\"}",
+				"refresh": 2,
+				"regex": "",
+				"sort": 0,
+				"tagValuesQuery": "",
+				"tags": [],
+				"tagsQuery": "",
+				"type": "query",
+				"useTags": false
+			},
+			{
+				"allValue": null,
+				"current": {
+					"text": "All",
+					"value": "$__all"
+				},
+				"datasource": "moss-ne3s-pm",
+				"hide": 0,
+				"includeAll": true,
+				"label": "ObjectType",
+				"multi": true,
+				"name": "ObjectType",
+				"options": [],
+				"query": "{\"find\": \"terms\", \"field\": \"ObjectType.keyword\"}",
+				"refresh": 2,
+				"regex": "",
+				"sort": 0,
+				"tagValuesQuery": "",
+				"tags": [],
+				"tagsQuery": "",
+				"type": "query",
+				"useTags": false
+			},
+			{
+				"allValue": null,
+				"current": {
+					"text": "All",
+					"value": "$__all"
+				},
+				"datasource": "moss-ne3s-pm",
+				"hide": 0,
+				"includeAll": true,
+				"label": "Dn",
+				"multi": true,
+				"name": "Dn",
+				"options": [],
+				"query": "{\"find\": \"terms\", \"field\": \"Dn.keyword\"}",
+				"refresh": 2,
+				"regex": "",
+				"sort": 0,
+				"tagValuesQuery": "",
+				"tags": [],
+				"tagsQuery": "",
+				"type": "query",
+				"useTags": false
+			},
+			{
+				"current": {
+					"text": "moss-ne3s-pm",
+					"value": "moss-ne3s-pm"
+				},
+				"hide": 0,
+				"label": "Data Source",
+				"name": "dataSource",
+				"options": [],
+				"query": "elasticsearch",
+				"refresh": 1,
+				"regex": "/.*ne3s.*/",
+				"type": "datasource"
+			}
+		]
+	},
+	"time": {
+		"from": "now-7d",
+		"to": "now"
+	},
+	"timepicker": {
+		"refresh_intervals": [
+			"5s",
+			"10s",
+			"30s",
+			"1m",
+			"5m",
+			"15m",
+			"30m",
+			"1h",
+			"2h",
+			"1d"
+		],
+		"time_options": [
+			"5m",
+			"15m",
+			"1h",
+			"6h",
+			"12h",
+			"24h",
+			"2d",
+			"7d",
+			"30d"
+		]
+	},
+	"timezone": "",
+	"title": "Moss Ne3s System Program Report - KPI",
+	"uid": "kIqZS_hiz",
+	"version": 7
+}

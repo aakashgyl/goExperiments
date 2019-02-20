@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Alarm Details</title>
+		<style>
+			table, th, td {
+				border: 2px solid black;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Active Faults</h1>
+			<table style="width:100%">
+				<tr>
+					<th>TimeStamp</th>
+					<th>FaultId</th>
+					<th>FaultSource</th>
+					<th>NumOfFaults: (Unit)</th>
+					<th>Curr 10s</th>
+					<th>Prev 10s</th>
+					<th>Curr Min</th>
+					<th>Prev Min</th>
+					<th>Curr Hour</th>
+					<th>Prev Hour</th>
+					<th>Curr Day</th>
+					<th>Prev Day</th>
+					<th>Since Reset</th>
+				</tr>
+				{{range $i, $alarm := .ActiveAlarmData -}}
+				<tr>
+					<td>
+						{{$alarm.TimeStamp}}
+					</td>
+					<td>
+						{{$alarm.FaultId}}
+					</td>
+					<td>
+						{{$alarm.FaultSource}}
+					</td>
+					<td>
+						{{$alarm.NumOfFaults}}
+					</td>
+					<td>
+						{{$alarm.Curr10s}}
+					</td>
+					<td>
+						{{$alarm.Prev10s}}
+					</td>
+					<td>
+						{{$alarm.CurrMin}}
+					</td>
+					<td>
+						{{$alarm.PrevMin}}
+					</td>
+					<td>
+						{{$alarm.CurrHour}}
+					</td>
+					<td>
+						{{$alarm.PrevHour}}
+					</td>
+					<td>
+						{{$alarm.CurrDay}}
+					</td>
+					<td>
+						{{$alarm.PrevDay}}
+					</td>
+					<td>
+						{{$alarm.SinceReset}}
+					</td>
+				</tr>
+				{{- end}}
+			</table>
+		<h1>Inactive Faults</h1>
+			<table style="width:100%">
+				<tr>
+					<th>TimeStamp</th>
+					<th>FaultId</th>
+					<th>FaultSource</th>
+					<th>NumOfFaults: (Unit)</th>
+					<th>Curr 10s</th>
+					<th>Prev 10s</th>
+					<th>Curr Min</th>
+					<th>Prev Min</th>
+					<th>Curr Hour</th>
+					<th>Prev Hour</th>
+					<th>Curr Day</th>
+					<th>Prev Day</th>
+					<th>Since Reset</th>
+				</tr>
+				{{range $i, $alarm := .InActiveAlarmData -}}
+				<tr>
+					<td>
+						{{$alarm.TimeStamp}}
+					</td>
+					<td>
+						{{$alarm.FaultId}}
+					</td>
+					<td>
+						{{$alarm.FaultSource}}
+					</td>
+					<td>
+						{{$alarm.NumOfFaults}}
+					</td>
+					<td>
+						{{$alarm.Curr10s}}
+					</td>
+					<td>
+						{{$alarm.Prev10s}}
+					</td>
+					<td>
+						{{$alarm.CurrMin}}
+					</td>
+					<td>
+						{{$alarm.PrevMin}}
+					</td>
+					<td>
+						{{$alarm.CurrHour}}
+					</td>
+					<td>
+						{{$alarm.PrevHour}}
+					</td>
+					<td>
+						{{$alarm.CurrDay}}
+					</td>
+					<td>
+						{{$alarm.PrevDay}}
+					</td>
+					<td>
+						{{$alarm.SinceReset}}
+					</td>
+				</tr>
+				{{- end}}
+
+			</table>
+	</body>
+</html>

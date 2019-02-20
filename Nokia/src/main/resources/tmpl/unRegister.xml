@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns="http://www.nokiasiemens.com/ne3s/1.0">
+	<soapenv:Header />
+	<soapenv:Body>
+		<ns:UnregisterRequest>
+			<ns:managerIdentity>
+				<ns:uniqueId>{{.Manager.UniqueId}}</ns:uniqueId>
+				<ns:type>{{.Manager.Type}}</ns:type>
+				<ns:vendor>{{.Manager.Vendor}}</ns:vendor>
+				<ns:release>{{.Manager.Rel}}</ns:release>
+			</ns:managerIdentity>
+		</ns:UnregisterRequest>
+	</soapenv:Body>
+</soapenv:Envelope>

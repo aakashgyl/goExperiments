@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ne3scommon="http://www.nokiasiemens.com/ne3s/1.0">
+	<SOAP-ENV:Body>
+		<ne3scommon:reportOperationStatus>
+			<ne3scommon:agentRegistrationId>9456969007</ne3scommon:agentRegistrationId>
+			<ne3scommon:agentRegistrationKey>R4eK0CnagX62TlW7Vmhrj0bROH71XdxGklSOx7leJMf4mo3NCxTYu5EDJlPz7679oxVgvSOlbFWYZ91q5EV+lw==</ne3scommon:agentRegistrationKey>
+			<ne3scommon:operationId>Provision_12345</ne3scommon:operationId>
+			<ne3scommon:completed>true</ne3scommon:completed>
+			<ne3scommon:pageSequenceNumber>1</ne3scommon:pageSequenceNumber>
+			<ne3scommon:attachmentProperties>
+				<ne3scommon:compression>none</ne3scommon:compression>
+				<ne3scommon:contentType>feedback</ne3scommon:contentType>
+				<ne3scommon:checksum>
+					<ne3scommon:algorithm>none</ne3scommon:algorithm>
+				</ne3scommon:checksum>
+			</ne3scommon:attachmentProperties>
+			<ne3scommon:operationStatusContent>cid:uploadFeedback</ne3scommon:operationStatusContent>
+		</ne3scommon:reportOperationStatus>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

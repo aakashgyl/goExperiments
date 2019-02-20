@@ -1,0 +1,31 @@
+BTS 1  Raw alarm report   2004-01-01T07:27:13.000Z
+
+Active Faults
+                                                                                                                                         NumOfFaults:Curr  Prev  Curr  Prev  Curr  Prev  Curr  Prev  Since
+TimeStamp                       FaultId                                                    FaultSource                         (Unit   )             10s   10s   Min   Min   Hour  Hour  Day   Day   Reset
+===========================================================================================================================================================================================================
+2004-01-01T00:00:03.000Z        (237   ) PowerCycleDetectedAl                              FSP1                                    (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:00:56.000Z        (9     ) DacWordChangeAl                                   FSP1                                    (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:01:00.000Z        (61058 ) FTM_SYNC_LOSS                                     SYNC-1/STPG-1                           (1   )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:01:13.000Z        (6822  ) NtpSyncOcxoCalibrationExpiredAl                   FSM                                     (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:01:25.000Z        (61029 ) FTM_LOS                                           ETHLK-1-1                               (1   )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:04:32.000Z        (6821  ) NtPSyncServerNotReachableAl                       FSM                                     (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T05:08:18.000Z        (61524 ) SSH_ENABLED                                       NE-FTM-1                                (1   )            0     0     0     0     0     0     3     0     3
+
+
+Inactive Faults
+                                                                                                                                         NumOfFaults:Curr  Prev  Curr  Prev  Curr  Prev  Curr  Prev  Since
+TimeStamp                       FaultId                                                    FaultSource                         (Unit   )             10s   10s   Min   Min   Hour  Hour  Day   Day   Reset
+===========================================================================================================================================================================================================
+2004-01-01T00:01:31.000Z        (26    ) NtpTimeNotSetAl                                   FSP1                                    (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:00:56.000Z        (1818  ) Ov_OscAl                                          FSP1                                    (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4188  ) FZMSysClkMissingAl                                FSP1                                    (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4187  ) SyncHoldoverTimeExpiredAl                         FSP1                                    (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (6803  ) GpsAntennaCurrentHighAl                           FSM                                     (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4296  ) ConstellationModeNotSupportedAl                   FSM                                     (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4186  ) TopClkTuningFailureAl                             FSM                                     (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4319  ) RibsSourceEnodebNotAvailable                      FSM                                     (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4122  ) GpsReceiverNotTrackingSatellitesAl                FSM                                     (18  )            0     0     0     0     0     0     1     0     1
+2004-01-01T00:00:56.000Z        (6280  ) PhaseSynchronizationErrorAl                       FSM                                     (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4273  ) SyncAlignNonRecAl                                 FSP1                                    (18  )            0     0     0     0     0     0     0     0     0
+2004-01-01T00:00:56.000Z        (4184  ) BtsStartupTempOutOfSpecAl                         FSP1                                    (18  )            0     0     0     0     0     0     0     0     0

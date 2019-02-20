@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns="http://www.nokiasiemens.com/ne3s/1.0">
+	<soapenv:Header />
+	<soapenv:Body>
+		<ns:completeRegistration>
+			<ns:managerIdentity>
+				<ns:uniqueId>{{.Manager.UniqueId}}</ns:uniqueId>
+				<ns:type>{{.Manager.Type}}</ns:type>
+				<ns:vendor>{{.Manager.Vendor}}</ns:vendor>
+				<ns:release>{{.Manager.Rel}}</ns:release>
+			</ns:managerIdentity>
+			<ns:managerResponse>23457391fa7300a638fe726ab10911bb</ns:managerResponse>
+			<!--Optional: -->
+			<ns:agentUniqueId>{{.Agent.UniqueId}}</ns:agentUniqueId>
+			<!--Zero or more repetitions: -->
+			<ns:extensions>
+				<ns:type>NDAC</ns:type>
+				<!--1 or more repetitions: -->
+				<ns:attributes>
+					<ns:name>Aakash</ns:name>
+					<ns:value>1234</ns:value>
+				</ns:attributes>
+			</ns:extensions>
+		</ns:completeRegistration>
+	</soapenv:Body>
+</soapenv:Envelope>
