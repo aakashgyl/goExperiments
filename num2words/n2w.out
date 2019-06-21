@@ -1,0 +1,12 @@
+mode: set
+github.com/Infoblox-CTO/num2words/implement.go:35.37,36.12 1 1
+github.com/Infoblox-CTO/num2words/implement.go:41.2,42.12 2 0
+github.com/Infoblox-CTO/num2words/implement.go:47.2,47.8 1 0
+github.com/Infoblox-CTO/num2words/implement.go:36.12,39.3 2 1
+github.com/Infoblox-CTO/num2words/implement.go:42.12,44.3 1 0
+github.com/Infoblox-CTO/num2words/implement.go:44.8,46.3 1 0
+github.com/Infoblox-CTO/num2words/implement.go:51.32,52.22 1 1
+github.com/Infoblox-CTO/num2words/implement.go:56.2,56.13 1 1
+github.com/Infoblox-CTO/num2words/implement.go:61.2,61.20 1 0
+github.com/Infoblox-CTO/num2words/implement.go:52.22,54.3 1 1
+github.com/Infoblox-CTO/num2words/implement.go:56.13,59.3 2 1
